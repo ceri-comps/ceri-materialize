@@ -94,7 +94,7 @@ You can either take the [Google Material Design Icons](https://design.google.com
 ```html
 <i class="material-icons">add</i>
 ```
-or use [ceri-icon](git://github.com/vue-comps/ceri-icon)
+or use [ceri-icon](https://github.com/ceri-comps/ceri-icon)
 
 ## License
 Copyright (c) 2017 Paul Pflugradt
