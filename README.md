@@ -77,6 +77,7 @@ $roboto-font-path: "~materialize-css/fonts/roboto/";
 // css for ceri components
 // activate only what you need
 // @import "~ceri-dropdown/materialize"; // https://github.com/ceri-comps/ceri-dropdown
+// @import "~ceri-modal/materialize"; // https://github.com/ceri-comps/ceri-modal
 ```
 
 Require it like this in your entry file:
