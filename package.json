@@ -1,7 +1,7 @@
 {
   "name": "ceri-materialize",
   "description": "materializeCSS styles for ceri-components",
-  "version": "0.0.2",
+  "version": "0.0.0",
   "homepage": "https://github.com/ceri-comps/",
   "author": {
     "name": "Paul Pflugradt",
@@ -22,7 +22,7 @@
   "keywords": [],
   "readmeFilename": "README.md",
   "scripts": {
-    "version": "npm run build && git add .",
+    "version": "git add .",
     "postversion": "git push && git push --tags && npm publish"
   }
 }
