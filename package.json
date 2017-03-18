@@ -21,5 +21,8 @@
   "devDependencies": {},
   "keywords": [],
   "readmeFilename": "README.md",
-  "scripts": {}
+  "scripts": {
+    "version": "npm run build && git add .",
+    "postversion": "git push && git push --tags && npm publish"
+  }
 }
