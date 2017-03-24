@@ -2,6 +2,7 @@
 
 [materializeCss](http://materializecss.com/) styles for [ceri-comps](https://github.com/ceri-comps).
 
+- Many components are still missing!
 
 # Features
 
