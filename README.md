@@ -2,13 +2,14 @@
 
 [materializeCss](http://materializecss.com/) styles for [ceri-comps](https://github.com/ceri-comps).
 
-- Many components are still missing!
+
+#### > Many components are still missing!
 
 # Features
 
 - No `jQuery` dependency
 - Easy style modification
-- Only load what you need ([webpack code splitting](https://webpack.github.io/docs/code-splitting.html))
+- Only load what you need
 
 # Install
 
@@ -20,7 +21,7 @@ npm install --save-dev ceri-materialize
 
 For the usage of the css only components see the very good [materialize-css documentation](http://materializecss.com/).
 
-For style personalization see the sass variable definitions in the original [repo](https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss).
+For style personalization see the available [sass variable definitions](https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss).
 
 
 ### Webpack config
@@ -33,53 +34,80 @@ module:
     { test: /\.eot\??(\d*)$/,    loader: "file-loader" }
     { test: /\.svg\??(\d*)$/,    loader: "file-loader" }
     # always:
-    { test: /\.scss$/, loader: "style!css!sass"}
+    { test: /\.scss$/, loader: ["style-loader","css-loader","sass-loader"]}
 ]
 ```
 ### configure SCSS
 create a file, for example `materialize.config.scss`
 ```scss
+// activate only what you need
+
 @charset "UTF-8";
+// empty
+// @import "~materialize-css/sass/components/mixins";
 
-@import "~materialize-css/sass/components/mixins";
-
-// all colors:
+// activate to add all colors:
 // @import "~materialize-css/sass/components/color";
 
-// BEGIN: only specific colors
+// OR: only include certain colors
+// will make all colors available to following stylesheets
 @import "~ceri-materialize/color";
-// include colors you need
+// select colors you need
 @include do("include-color","black", "base");
 @include do("include-color","white", "base");
+// To include the selected colors to your bundle
 @import "~ceri-materialize/colorProcessor";
-// END: only specific colors
 
+// contains all the variables used in all stylesheets
+// https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss
 @import "~materialize-css/sass/components/variables";
-@import "~materialize-css/sass/components/normalize";
-@import "~materialize-css/sass/components/typography";
-@import "~materialize-css/sass/components/global";
 
 // modify variables here
-// all available sass variables:
-// https://github.com/Dogfalo/materialize/blob/master/sass/components/_variables.scss
 // e.g. $dropdown-bg-color: black;
+// or make a own stylesheet and import it here
 
-// css only, no JS needed for these
-// activate only what you need
-$roboto-font-path: "~materialize-css/fonts/roboto/";
-//@import "~materialize-css/sass/components/roboto";
-//@import "~materialize-css/sass/components/icons-material-design"; // icons are no long included in materializeCSS
-//@import "~materialize-css/sass/components/buttons";
-//@import "~materialize-css/sass/components/grid";
-//@import "~materialize-css/sass/components/navbar";
-//@import "~materialize-css/sass/components/preloader";
-//@import "~ceri-materialize/forms";
+// https://necolas.github.io/normalize.css/
+@import "~materialize-css/sass/components/normalize";
 
-// css for ceri components
-// activate only what you need
-// @import "~ceri-dropdown/materialize"; // https://github.com/ceri-comps/ceri-dropdown
-// @import "~ceri-modal/materialize"; // https://github.com/ceri-comps/ceri-modal
-// @import "~ceri-side-nav/materialize"; // https://github.com/ceri-comps/ceri-side-nav
+// sets font sizes for different device sizes
+// and different elements e.g. h1,h2 etc.
+@import "~materialize-css/sass/components/typography";
+
+// contains some global definitions like .z-depth, .right, .left
+// or Media Query Classes
+@import "~materialize-css/sass/components/global";
+
+// roboto
+// $roboto-font-path: "~materialize-css/fonts/roboto/";
+// @import "~materialize-css/sass/components/roboto";
+
+// icons are no long included in materializeCSS
+// @import "~materialize-css/sass/components/icons-material-design"; 
+
+// http://materializecss.com/buttons.html
+@import "~materialize-css/sass/components/buttons";
+
+// http://materializecss.com/grid.html
+@import "~materialize-css/sass/components/grid";
+
+// http://materializecss.com/navbar.html
+// @import "~materialize-css/sass/components/navbar";
+
+// http://materializecss.com/preloader.html
+// @import "~materialize-css/sass/components/preloader";
+
+// all forms like checkboxed, radio-buttons, etc.
+@import "~ceri-materialize/forms";
+
+
+// https://github.com/ceri-comps/ceri-dropdown
+// @import "~ceri-dropdown/materialize";
+
+// https://github.com/ceri-comps/ceri-modal
+// @import "~ceri-modal/materialize"; 
+
+// https://github.com/ceri-comps/ceri-side-nav
+// @import "~ceri-side-nav/materialize"; 
 ```
 
 Require it like this in your entry file:
