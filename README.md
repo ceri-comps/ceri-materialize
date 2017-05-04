@@ -108,6 +108,9 @@ create a file, for example `materialize.config.scss`
 
 // https://github.com/ceri-comps/ceri-side-nav
 // @import "~ceri-side-nav/materialize"; 
+
+// https://github.com/ceri-comps/ceri-tooltip
+// @import "~ceri-tooltip/materialize"; 
 ```
 
 Require it like this in your entry file:
