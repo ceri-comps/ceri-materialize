@@ -15,10 +15,12 @@
   "engines": {
     "node": "*"
   },
-  "dependencies": {
-    "materialize-css": "^0.98.0"
+  "peerDependencies": {
+    "materialize-css": "^0.99.0"
   },
-  "devDependencies": {},
+  "dependencies": {
+    "materialize-css": "^0.99.0"
+  },
   "keywords": [],
   "readmeFilename": "README.md",
   "scripts": {
