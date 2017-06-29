@@ -1,0 +1,19 @@
+dependencies:
+  materialize-css: 0.99.0
+packages:
+  /hammerjs/2.0.8:
+    resolution:
+      integrity: sha1-BO93hiz/K7edMPdpIJWTAiK/YPE=
+  /jquery/3.2.1:
+    resolution:
+      integrity: sha1-XE2d5lKvbNCncBVKYxu6ErAVx4c=
+  /materialize-css/0.99.0:
+    dependencies:
+      hammerjs: 2.0.8
+      jquery: 3.2.1
+    resolution:
+      integrity: sha1-pdl6xl0XHVqhvGoaGdmEteF6kgI=
+registry: 'https://registry.npmjs.org/'
+shrinkwrapVersion: 3
+specifiers:
+  materialize-css: ^0.99.0

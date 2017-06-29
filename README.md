@@ -14,7 +14,12 @@
 # Install
 
 ```sh
-npm install --save-dev ceri-materialize
+# npm
+npm install --save-dev ceri-materialize materialize-css@0
+# yarn
+yarn add --dev ceri-materialize materialize-css@0
+#pnpm
+pnpm install --save-dev ceri-materialize materialize-css@0
 ```
 
 ## Style
