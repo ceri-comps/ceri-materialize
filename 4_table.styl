@@ -1,0 +1,30 @@
+@require "./2_variables"
+// Tables
+table, th, td
+  border: none
+table
+  width: 100%
+  display: table
+  &.bordered > thead > tr,
+  &.bordered > tbody > tr
+    border-bottom: 1px solid $table-border-color
+  &.striped > tbody
+    > tr:nth-child(odd)
+      background-color: $table-striped-color
+    > tr > td
+      border-radius: 0
+  &.highlight > tbody > tr
+    transition: background-color .25s ease
+    &:hover
+      background-color: $table-striped-color
+  &.centered
+    thead tr th, tbody tr td
+      text-align: center
+thead
+  border-bottom: 1px solid $table-border-color
+td, th
+  padding: 15px 5px
+  display: table-cell
+  text-align: left
+  vertical-align: middle
+  border-radius: 2px

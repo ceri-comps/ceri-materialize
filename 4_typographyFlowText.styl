@@ -1,0 +1,9 @@
+@require "./2_variables"
+.flow-text
+  font-weight: 300
+  for $i in 0..$intervals
+    @media only screen and (min-width : 360 + ($i * $interval-size)) 
+      font-size: 1.2rem * (1 + (.02 * $i))
+  // Handle below 360px screen
+  @media only screen and (max-width: 360px) 
+    font-size: 1.2rem

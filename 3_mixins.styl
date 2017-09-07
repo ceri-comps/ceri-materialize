@@ -1,0 +1,40 @@
+@require "./2_variables"
+$valid-input-style()
+  border-bottom: 1px solid $input-success-color
+  box-shadow: 0 1px 0 0 $input-success-color
+$invalid-input-style()
+  border-bottom: $input-invalid-border
+  box-shadow: 0 1px 0 0 $input-error-color
+$custom-success-message()
+  content: attr(data-success)
+  color: $input-success-color
+  opacity: 1
+  transform: translateY(9px)
+$custom-error-message()
+  content: attr(data-error)
+  color: $input-error-color
+  opacity: 1
+  transform: translateY(9px)
+$input-after-style()
+  display: block
+  content: ""
+  position: absolute
+  top: 100%
+  left: 0
+  opacity: 0
+  transition: .2s opacity ease-out, .2s color ease-out
+
+$reset-offset()
+  margin-left: auto
+  left: auto
+  right: auto
+
+$grid-classes($size, $i, $perc) 
+  &.offset-{$size}{$i} 
+    margin-left: $perc
+  
+  &.pull-{$size}{$i} 
+    right: $perc
+  
+  &.push-{$size}{$i} 
+    left: $perc

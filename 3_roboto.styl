@@ -1,0 +1,42 @@
+@require "./2_variables"
+roboto-font($variant="Roboto", $type="Medium", $style="Normal")
+  if $variant == "Roboto"
+    $folder = "roboto"
+  else if $variant == "Roboto-Slab"
+    $folder = "roboto-slab"
+  else if $variant == "Roboto-Condensed"
+    $folder = "roboto-condensed"
+  if $type == "Thin"
+    $weight = 100
+  else if $type == "Light"
+    $weight = 300
+  else if $type == "Regular"
+    $weight = 400
+  else if $type == "Medium"
+    $weight = 500
+  else if $type == "Bold"
+    $weight = 700
+  else if $type == "Black"
+    $weight = 900
+  if $style == "Italic"
+    $style = "italic"
+    $type += "Italic"
+  else
+    $style = "normal"
+  
+    
+  $font-full-path = $roboto-font-path+"/"+$folder+"/"+$variant+"-"+$type
+  $variant-name = $variant + " " + $type
+  $variant-name2 = $variant + "-" + $type
+  @font-face
+    font-family: $variant
+    src: url($font-full-path+".eot")
+    src: local($variant-name), local($variant-name2),url($font-full-path+"eot?#iefix") format("embedded-opentype"),url($font-full-path+"woff2") format("woff2"), url($font-full-path+"woff") format("woff"), url($font-full-path+"ttf") format("truetype"), url($font-full-path+"svg#"+$variant) format("svg")
+    font-weight: $weight
+    font-style: $style
+
+  @font-face
+    font-family: $variant+"-"+$type
+    src: url($font-full-path+"eot")
+    src: local($variant-name), local($variant-name2), url($font-full-path+"eot?#iefix") format("embedded-opentype"), url($font-full-path+"woff2") format("woff2"), url($font-full-path+"woff") format("woff"), url($font-full-path+"ttf") format("truetype"), url($font-full-path+"svg#"+$variant) format("svg")
+

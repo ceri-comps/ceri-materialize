@@ -5,3 +5,4 @@ npm-debug.log
 lib/*.js
 .vscode
 shrinkwrap.yaml
+test/test.css

@@ -15,13 +15,19 @@
   "engines": {
     "node": "*"
   },
-  "peerDependencies": {
-    "materialize-css": "0"
-  },
   "keywords": [],
   "readmeFilename": "README.md",
   "scripts": {
+    "test": "stylus test/test.styl --out test/",
     "version": "git add .",
     "postversion": "git push && git push --tags && npm publish"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "normalize.css": "^7.0.0",
+    "roboto-fontface": "^0.8.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.1",
+    "webpack": "^3.5.6"
   }
 }

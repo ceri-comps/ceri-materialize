@@ -1,0 +1,199 @@
+@require "./2_variables"
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+ul {
+  &:not(.browser-default) {
+    padding-left: 0;
+    list-style-type: none;
+    & > li {
+      list-style-type: none;
+    }
+  }
+}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+
+  // Gets rid of tap active state
+  -webkit-tap-highlight-color: transparent;
+}
+
+label {
+  font-size: $label-font-size;
+  color: $input-border-color;
+}
+
+// Positioning
+.valign-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+
+// classic clearfix
+.clearfix {
+  clear: both;
+}
+
+
+
+.hoverable {
+  transition: box-shadow .25s;
+  &:hover {
+    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+}
+
+// Dividers
+
+.divider {
+  height: 1px;
+  overflow: hidden;
+  background-color: color("grey", "lighten-2");
+}
+
+
+//  Blockquote
+
+blockquote {
+  margin: 20px 0;
+  padding-left: 1.5rem;
+  border-left: 5px solid $primary-color;
+}
+
+
+// Images
+img.responsive-img,
+video.responsive-video {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+
+/*********************
+  Transition Classes
+**********************/
+
+ul.staggered-list li {
+  opacity: 0;
+}
+
+.fade-in {
+  opacity: 0;
+  transform-origin: 0 50%;
+}
+
+
+/*********************
+  Media Query Classes
+**********************/
+.hide-on-small-only, .hide-on-small-and-down
+  +screenOnlyAnd($small-and-down)
+    display: none !important
+.hide-on-med-and-down
+  +screenOnlyAnd($medium-and-down)
+    display: none !important
+.hide-on-med-and-up
+  +screenOnlyAnd($medium-and-up)
+    display: none !important
+.hide-on-med-only
+  +screenOnlyAnd($medium-only)
+    display: none !important
+.hide-on-large-only
+  +screenOnlyAnd($large-and-up)
+    display: none !important
+.show-on-large
+  +screenOnlyAnd($large-and-up)
+    display: block !important
+.show-on-medium
+  +screenOnlyAnd($medium-only)
+    display: block !important
+.show-on-small
+  +screenOnlyAnd($small-and-down)
+    display: block !important
+.show-on-medium-and-up
+  +screenOnlyAnd($medium-and-up)
+    display: block !important
+.show-on-medium-and-down
+  +screenOnlyAnd($medium-and-down)
+    display: block !important
+
+// Center text on mobile
+.center-on-small-only
+  +screenOnlyAnd($small-and-down)
+    text-align: center
+
+
+/*******************
+  Utility Classes
+*******************/
+
+.hide {
+  display: none !important;
+}
+
+// Text Align
+.left-align {
+  text-align: left;
+}
+.right-align {
+  text-align: right
+}
+.center, .center-align {
+  text-align: center;
+}
+
+.left {
+  float: left !important;
+}
+.right {
+  float: right !important;
+}
+
+// No Text Select
+.no-select {
+  user-select: none;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.truncate {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.container 
+  margin: 0 auto
+  max-width: 1280px
+  width: 90%
+
++screenOnlyAnd($medium-and-up)
+  .container 
+    width: 85%
+
++screenOnlyAnd($large-and-up)
+  .container 
+    width: 70%
