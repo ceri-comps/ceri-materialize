@@ -124,6 +124,7 @@ create a file, for example `materialize.config.styl`
 // @require "~ceri-materialize/6_buttons"
 // @require "~ceri-materialize/6_grid"
 // @require "~ceri-materialize/6_navbar"
+// @require "~ceri-materialize/6_preloader"
 
 
 // ceri-comps
@@ -132,6 +133,7 @@ create a file, for example `materialize.config.styl`
 // @require "~ceri-modal/materialize"
 // @require "~ceri-side-nav/materialize"
 // @require "~ceri-tooltip/materialize"
+// @require "~ceri-toaster/materialize"
 // @require "~ceri-progress/materialize
 
 
@@ -139,6 +141,7 @@ create a file, for example `materialize.config.styl`
 
 // @require "~ceri-files-view/materialize"
 // @require "~ceri-login-modal/materialize
+// @require "~ceri-fab/materialize"
 ```
 
 Require it like this in your entry file:
