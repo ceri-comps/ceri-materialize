@@ -112,6 +112,7 @@ create a file, for example `materialize.config.styl`
 
 // css for forms
 
+// @require "~ceri-materialize/5_inputFields"
 // @require "~ceri-materialize/5_checkboxes"
 // @require "~ceri-materialize/5_radioButtons"
 // @require "~ceri-materialize/5_range"
